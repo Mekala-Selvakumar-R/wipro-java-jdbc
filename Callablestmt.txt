@@ -1,0 +1,96 @@
+
+Oracle Stored Procedure
+
+First, create a procedure in Oracle:
+
+
+CREATE OR REPLACE PROCEDURE get_employee_name (
+    p_emp_id IN NUMBER,
+    p_emp_name OUT VARCHAR2
+)
+AS
+BEGIN
+    SELECT ename
+    INTO p_emp_name
+    FROM emp
+    WHERE empno = p_emp_id;
+END;
+/
+
+
+---
+
+2. Java Program Using CallableStatement
+
+
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Types;
+
+public class CallableStatementExample {
+
+    public static void main(String[] args) {
+
+        Connection con = null;
+        CallableStatement cstmt = null;
+
+        try {
+
+            // Load Oracle Driver
+            Class.forName("oracle.jdbc.driver.OracleDriver");
+
+            // Create Connection
+            con = DriverManager.getConnection(
+                "jdbc:oracle:thin:@localhost:1521:xe",
+                "system",
+                "password"
+            );
+
+            // Prepare CallableStatement
+            cstmt = con.prepareCall("{call get_employee_name(?, ?)}");
+
+            // Set IN parameter
+            cstmt.setInt(1, 7369);
+
+            // Register OUT parameter
+            cstmt.registerOutParameter(2, Types.VARCHAR);
+
+            // Execute procedure
+            cstmt.execute();
+
+            // Get OUT parameter value
+            String empName = cstmt.getString(2);
+
+            System.out.println("Employee Name: " + empName);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (cstmt != null) cstmt.close();
+                if (con != null) con.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+
+
+---
+Output Example
+
+
+Employee Name: SMITH
+
+---
+Important JDBC JAR
+
+For Oracle DB, include Oracle JDBC driver:
+
+* `ojdbc8.jar` (Java 8+)
+
+You can download it from:
+
+[Oracle JDBC Driver Downloads](https://www.oracle.com/database/technologies/appdev/jdbc-downloads.html?utm_source=chatgpt.com)
