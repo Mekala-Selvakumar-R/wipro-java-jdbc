@@ -1,0 +1,1614 @@
+RDBMS - Relational Database Management System
+
+File System -- > using program  - read /write/
+modify  in the files
+          Program and data are dependent
+
+Database  - 
+    database is a set of interrelated data, they are stored together without harmful and unnecessary redundancy
+
+  They are independent of program
+data stored separately
+DBMS- set of programs used to manage the database
+
+Data Model
+  - Hierarchical model
+  - Networking model
+  - Relation   - RDBMS
+
+Table
+
+    Column1       Column2          Column3
+      data1        data11          data111       -->tuple or row
+
+
+RDBMS  -- > Dr E.F.Codd's rule 
+ 0 to 12
+
+-------
+Oracle
+MySQL
+SqlServer
+Postgres
+
+
+Oracle  - Oracle   - licensed
+MySQL  -  Oracle  - free
+
+           request
+  client  -------> server
+         <--------
+           response
+
+server - it serves
+serve ->
+file
+data
+information
+
+cclient and server may be in the same machine or in the different machine
+
+MySQLworkbecnch  ------------------>MySQL server
+  client
+
+
+                MySQL Server
+
+      client1  client2  client3   client4
+
+
+Client- server 
+
+A Server is usually a powerful computer/system designed to provide services, data, or resources to other computers called clients. A server is a machine that listens for requests from clients and responds to them over a network.
+
+
+Both are computers, but servers are optimized for:
+
+handling many users
+continuous running (24/7)
+higher performance
+networking
+reliability 
+
+Typical Server Hardware
+
+
+A real server machine may contain:
+
+
+| Component              | Description           |
+| ---------------------- | --------------------- |
+| Powerful CPU           | Multiple cores        |
+| Large RAM              | 32GB, 64GB, 128GB+    |
+| SSD Storage            | Fast data access      |
+| Multiple Network Cards | High-speed networking |
+| Cooling System         | Prevent overheating   |
+| Redundant Power Supply | Reliability           |
+
+
+Servers usually run:
+
+Ubuntu
+Red Hat Enterprise Linux
+Windows Server
+
+Linux is most common.
+
+
+ Different Types of Servers
+1. Web Server :  Hosts websites.
+
+Examples: Apache HTTP Server, Nginx
+2. Application Server : Runs business logic.
+
+Example: Apache Tomcat 
+
+3. Database Server : Stores data.
+
+Examples:
+
+MySQL
+PostgreSQL
+
+4. File Server :  Stores shared files.
+
+5. Mail Server : Handles emails.
+
+
+
+   authorized user
+   login
+      username, password
+
+  Database server
+
+  MySQL Workbench -----------------> MySQL Server 
+                                     (running)
+
+Connections
+  Local instance
+    Username : root
+   password : root
+
+    username and password correct it allow connection
+
+    request ------------> server
+           retrieve the data
+           <---------
+             data
+
+
+--------------------
+# Client-Server Architecture
+
+Client-Server Architecture is a software architecture where:
+
+> A Client sends requests and a Server processes those requests and sends responses back.
+
+It is one of the most common architectures used in modern applications.
+
+---
+
+ Basic Idea
+
+ 
+Client  →  Request  →  Server
+Client  ←  Response ←  Server
+ 
+
+---
+
+# 🔹 Simple Real-Life Example
+
+Imagine ordering food online.
+
+---
+
+## 🔹 Client
+
+You use:
+
+* mobile app
+* web browser
+
+to place order.
+
+---
+
+## 🔹 Server
+
+Restaurant system:
+
+* receives request
+* processes order
+* sends response
+
+---
+
+# 🔹 Diagram
+
+```text id="2s2pn7"
+┌─────────────┐        Internet        ┌─────────────┐
+│   Client    │ ───────────────────→  │   Server    │
+│ (Browser /  │   Request             │ (Backend)   │
+│ Mobile App) │                       │             │
+│             │ ←───────────────────  │             │
+└─────────────┘      Response         └─────────────┘
+```
+
+---
+
+# 🔹 What is Client?
+
+A **Client** is the system that:
+
+* requests services/resources
+* interacts with user
+
+Examples:
+
+* Web browser
+* Mobile app
+* Desktop application
+
+---
+
+## Examples of Clients
+
+* Google Chrome
+* WhatsApp
+* Instagram
+
+---
+
+# 🔹 What is Server?
+
+A **Server** is the system that:
+
+* receives requests
+* processes business logic
+* accesses database
+* sends responses
+
+---
+
+# 🔹 Example Flow
+
+Suppose user opens:
+
+```text id="66ms7l"
+www.amazon.com
+```
+
+---
+
+## Step 1
+
+Browser sends request:
+
+```http id="m4a9g4"
+GET /products
+```
+
+---
+
+## Step 2
+
+Server receives request.
+
+---
+
+## Step 3
+
+Server:
+
+* checks database
+* fetches products
+* prepares response
+
+---
+
+## Step 4
+
+Server sends response:
+
+```html id="53z5r9"
+HTML / JSON / Data
+```
+
+---
+
+## Step 5
+
+Browser displays products.
+
+---
+
+# 🔹 Components of Client-Server Architecture
+
+---
+
+## 1. Client Layer
+
+Handles:
+
+* User Interface (UI)
+* User interactions
+
+Example:
+
+* React frontend
+* Mobile app
+
+---
+
+## 2. Network
+
+Communication happens through:
+
+* Internet
+* LAN
+* HTTP/HTTPS
+
+---
+
+## 3. Server Layer
+
+Handles:
+
+* Business logic
+* Authentication
+* Validation
+* Data processing
+
+---
+
+## 4. Database
+
+Stores data:
+
+* users
+* products
+* orders
+
+Example:
+
+* MySQL
+* PostgreSQL
+
+---
+
+# 🔹 Request-Response Cycle
+
+```text id="n7q0of"
+Client Request
+      ↓
+Server Processing
+      ↓
+Database Access
+      ↓
+Server Response
+      ↓
+Client Display
+```
+
+---
+
+# 🔹 Types of Client-Server Architecture
+
+---
+
+# 🔸 1-Tier Architecture
+
+Everything in one system.
+
+Example:
+
+* standalone desktop app
+
+---
+
+# 🔸 2-Tier Architecture
+
+```text id="9oy3dm"
+Client ↔ Database Server
+```
+
+Client directly talks to database.
+
+---
+
+# 🔸 3-Tier Architecture (Most Common)
+
+```text id="m5kclo"
+Client
+   ↓
+Application Server
+   ↓
+Database Server
+```
+
+---
+
+## Example
+
+Frontend:
+
+* React
+
+Backend:
+
+* Spring Boot
+
+Database:
+
+* MySQL
+
+---
+
+# 🔹 Example Using Java Spring
+
+---
+
+## Client Sends Request
+
+```http id="o7e8yt"
+GET /users
+```
+
+---
+
+## Server Controller
+
+```java id="6ptp53"
+@RestController
+public class UserController {
+
+    @GetMapping("/users")
+    public List<User> getUsers() {
+        return service.getUsers();
+    }
+}
+```
+
+---
+
+## Server Sends Response
+
+```json id="trtwm9"
+[
+  {
+    "id":1,
+    "name":"John"
+  }
+]
+```
+
+---
+
+# 🔹 Advantages
+
+| Advantage        | Explanation                      |
+| ---------------- | -------------------------------- |
+| Centralized data | Easier management                |
+| Better security  | Server controls access           |
+| Easy maintenance | Update server only               |
+| Scalability      | Add more servers                 |
+| Resource sharing | Multiple clients use same server |
+
+---
+
+# 🔹 Disadvantages
+
+| Disadvantage       | Explanation            |
+| ------------------ | ---------------------- |
+| Server failure     | Entire system affected |
+| Network dependency | Needs connectivity     |
+| Heavy server load  | Too many clients       |
+
+---
+
+# 🔹 Real-World Examples
+
+| Application | Client       | Server           |
+| ----------- | ------------ | ---------------- |
+| Gmail       | Browser/App  | Google servers   |
+| WhatsApp    | Mobile App   | WhatsApp servers |
+| Netflix     | Smart TV/App | Netflix servers  |
+| Banking App | Mobile App   | Bank servers     |
+
+---
+
+# 🔹 Client vs Server
+
+| Client                | Server             |
+| --------------------- | ------------------ |
+| Sends request         | Processes request  |
+| User-facing           | Backend processing |
+| Usually lightweight   | Powerful system    |
+| Examples: Browser/App | Web server/API     |
+
+---
+
+# 🔹 Relation with APIs
+
+In modern systems:
+
+```text id="v6xz10"
+Client ↔ REST API ↔ Server
+```
+
+Usually data exchanged in:
+
+* JSON
+* XML
+
+---
+
+# 🔹 Modern Client-Server Example
+
+```text id="92m4e7"
+React Frontend
+       ↓
+Spring Boot REST API
+       ↓
+MySQL Database
+```
+
+This is standard enterprise architecture.
+
+---
+
+# 🔹 Interview Definition
+
+> Client-Server Architecture is a distributed architecture where clients request services or resources, and servers process those requests and return responses over a network.
+SQL  - structured Query Language
+ ANSI-SQL
+DDL - Data Definition Language
+           - CREATE, DROP, ALTER,TRUNCATE
+DML  - Data Manipulation Language
+          INSERT, UPDATE,DELETE
+DQL - Data Query Language
+      - Select
+
+DCL - Data Control Language
+        Grant , Revoke
+TCL  - Transaction Control Language
+       - commit, rollback, savepoint
+
+Data base is a container - related tables  (project related)
+
+   
+            backup
+
+bankdb
+CUSTOMER
+
+insurancedb
+CUSTOMER
+
+
+COMMANDS ARE not case sensitive
+
+oracle  - values are case sensitive
+           RANA,  Rana -- are different
+
+MySQL - values are case insensitive
+---------------------
+
+Oracle
+ 
+  Char  - char(n)  - fixed length
+            char(10)
+                CHARAN - 6 CHARACTER , 4 BLANK SPACES
+
+  VARCHAR2  - vARCHAR2(20)
+                - Ankit
+                     - 5 char occupied
+
+VARCHAR Data Type
+Do not use the VARCHAR data type. Use the VARCHAR2 data type instead. Although the VARCHAR data type is currently synonymous with VARCHAR2, the VARCHAR data type is scheduled to be redefined as a separate data type used for variable-length character strings compared with different comparison semantics.
+
+NUMBER(P,S)
+P - p is the precision, or the maximum number of significant decimal digits,
+s - s is the scale, or the number of digits from the decimal point to the least significant digit. The scale can range from -84 to 127.
+
+
+LONG Data Type
+Do not create tables with LONG columns. Use LOB columns (CLOB, NCLOB, BLOB) instead. LONG columns are supported only for backward compatibility.
+
+DATE
+
+DATETIME
+TIMESTAMP
+
+RAW
+LONGRAW
+RAW and LONG RAW Data Types
+The RAW and LONG RAW data types store data that is not to be explicitly converted by Oracle Database when moving data between different systems. These data types are intended for binary data or byte strings. For example, you can use LONG RAW to store graphics, sound, documents, or arrays of binary data, for which the interpretation is dependent on the use.
+
+Oracle strongly recommends that you convert LONG RAW columns to binary LOB (BLOB) columns. LOB columns are subject to far fewer restrictions than LONG columns. See TO_LOB for more information.
+
+
+Large Object (LOB) Data Types
+The built-in LOB data types BLOB, CLOB, and NCLOB (stored internally) and BFILE (stored externally) can store large and unstructured data such as text, image, video, and spatial data. 
+
+
+
+
+create  table  <tablename>(
+columname1   datatype  [CONSTRAINT constraintname  constraint],    -->column level
+columnname2  datatype ... ,
+.
+.
+columnnamen datatype ..
+[CONSTRAINT constraintname  constraint.... ]  --> row
+)
+
+          
+create  table Product(
+product_id  number(3),
+product_name  varchar2(20),
+price  number(7,2));
+
+ 
+insert into product values(101,'Crayons',100);
+
+select * from product;
+
+insert into product(product_name,price) values('Water Color',250);
+
+
+Constraints
+
+primary key
+unique
+not null
+default
+check
+foreign key
+
+
+allowed in column level , we can't use it in the row level
+
+not null   -  value is mandatory
+default   - if you are not supply  any value, it will be taken the default value
+
+
+
+drop table product;
+
+create  table Product(
+product_id  number(3),
+product_name  varchar2(20) not null,
+price  number(7,2) default 150);
+
+
+insert into product values(101,'Crayons',100);
+insert into product(product_id,product_name) values(102.'Color Paper');
+select * from Product;
+
+insert into product(product_id,price) values (103,200);   -> error try to insert the NULL into the product_name column which is a not null column (null is not allowed) - it throws an error
+
+
+
+insert into product values(105,NULL,100);    -- explicitly try to  issert the NULL value to the Product_Name column -error
+  
+insert into product values(105,'NULL',100); - it is not a NULL value , it is a string
+
+primary key - is a column which is used to identify the row uniquely
+
+ value - unique , not null
+
+table - single primary key - table level, column level
+
+   columns - single column,  combination of column
+                               flight_id, date_of_joruney, ticket_no
+   composite primary key
+               - table level
+
+
+create  table Product(
+product_id  number(3) primary key,
+product_name  varchar2(20) not null,
+price  number(7,2) default 150);
+
+
+create  table Product(
+product_id  number(3) CONSTRAINT product_pkey  primary key,
+product_name  varchar2(20) not null,
+price  number(7,2) default 150);
+
+
+
+create  table Product(
+product_id  number(3) ,
+product_name  varchar2(20) not null,
+price  number(7,2) default 150,
+primary key(product_id));    -  even we can define composite primary key in the  row level
+
+
+
+
+create  table Product(
+product_id  number(3) ,
+product_name  varchar2(20) not null,
+price  number(7,2) default 150,
+CONSTRAINT  product_pkey primary key(product_id));    -  even we can define composite primary key in the  row level
+
+primary key - duplicates  values not allowed , NULL values  not allowed
+
+
+insert into product values(101,'Crayons',100);
+
+insert into product values(101,'Crayons',100);   -- error PRODUCT_PKEY constraint violated
+
+
+insert into product values(product_name, price) values('WATER Color',300);
+                 -- error , it try to insert NULL  value to PRODUCT_ID, BUT PRODUCT_ID is a primary key (no duplicate, no null) -  it will throw an error ,  NULL CANNOT BE INSERTED INTO notnull column
+
+------------------
+UNIQUE 
+ 
+   any number of UNIQUE keys are allowed . so more than one column can be declared as UNIQUE
+- composite UNIQUE  key is also allowed
+
+Create table Customer(
+customer_id number(5) primary key,
+customer_name varchar2(20),
+email_id varchar2(20) unique,     // duplicates not allowed,  it allows one null values
+contact number(10),
+date_of_birth date);
+insert into  Customer values( 12345,'ARAVIND','abc@gmail.com',9876543210,'07-05-16');
+
+insert into  Customer values( 12346,'KAVYA','abc@gmail.com',8765432109,'07-05-16');  -- ERROR MSG -DUPLICATE EMAILID
+insert into  Customer values( 12345,'ARAVIND',NULL,9876543210,'07-05-16'); -- ONE NULL VALUE IS ALLOWED
+
+
+Create table Customer(
+customer_id number(5) primary key,
+customer_name varchar2(20),
+email_id varchar2(20) not null unique,     // duplicates not allowed,  null also not allowed
+contact number(10),
+date_of_birth date);
+
+
+
+insert into  Customer values( 12345,'ARAVIND',NULL,9876543210,'07-05-16'); -- ERROR NULL IS NOT ALLOWED, IMPLICITLY OR EXPLICTLY
+
+
+INSERT INTO CUSTOMER (CUSTOMER_ID,CUSTOMER_NAME) VALUES(12345,'ARAVIND);  -- ERROR  EMAIL_ID , IT TRY TO INSERT THE null value 
+
+--------
+
+check
+
+salary>0
+comm <salary
+price >0
+
+column level - you can check the current column   price >0
+create
+table level - you can compare any two column value  eg  salary>comm
+             salary>1000
+
+create  table Product(
+product_id  number(3) primary key ,
+product_name  varchar2(20) not null,
+price  number(7,2) check(price>0));   // column level
+ 
+
+
+
+
+------------------
+create table course_entrollement(
+student_id  number(5),
+course_id  number(5),
+entrollment_date  date,
+primary key(student_idm course_id));
+
+-------------------------------------
+
+Normalization
+  - process of  making data consistent and with  minimal redundancy
+  - one table - split into  multiple tables 
+- table might be having relationship   
+
+
+!NF,2NF,3NF, BCNF, 4NF, 5NF
+
+
+3NF
+
+1NF -
+ each every cell contain atomic values 
+ one value
+
+  Remove repeated attributes or a group of attributes to place the entities  to the first normal form
+
+2nF
+  - remove the functional dependency
+3nf - remove transitive dependency
+
+
+PONO
+PODATE
+VENDOR
+VENDOR_NAME
+
+ITEM CODE 1    DESCRIPTION    QTY  RATE    VALUE
+ITEM CODE 2    DESCRIPTION    QTY  RATE    VALUE
+ITEM CODE 3    DESCRIPTION    QTY  RATE    VALUE
+
+
+
+PONO
+PODATE
+VENDOR
+VENDOR_NAME
+
+ITEM CODE 1    
+DESCRIPTION   
+ QTY 
+ RATE    
+VALUE
+
+ITEM CODE 2   
+DESCRIPTION   
+ QTY 
+ RATE    
+VALUE
+
+--------------
+
+1 NF
+
+PONO    - pkey
+PODATE
+VENDOR
+VENDOR_NAME
+---
+
+PONO     - foreign key
+ITEM CODE    
+DESCRIPTION   
+ QTY 
+ RATE    
+VALUE
+
+
+----------------------
+
+2nf
+
+Remove attributes  that are dependent on only part of the unique identifier
+making non-key attributes fully and functionally dependent on primary key
+
+ 
+
+
+
+PONO    - pkey
+PODATE
+VENDORid
+VENDOR_NAME
+---
+
+PONO     - foreign key
+ITEM CODE    
+ QTY 
+VALUE
+
+--
+ITEMCODE
+DESCRIPTION
+RATE
+---
+3NF
+ - TRANSITIVE DEPENDENCY
+
+
+ Remove attributes that are dependent  on attributes which aare  not part of  the unique
+identier
+ - removing transitive dependency
+
+PONO    - pkey
+PODATE
+VENDORid
+ 
+---
+
+VENDORid
+VENDOR_NAME
+
+
+PONO     - foreign key
+ITEM CODE  - foreign code   
+ QTY 
+VALUE
+
+--
+ITEMCODE  -pkey
+DESCRIPTION
+RATE
+
+
+Department
+DepartmentId - pkey
+departmentName
+Location
+
+
+
+Employee
+employeeId
+employeeName
+salary
+departmentId -  same data type of department department Id  - foreign key references department
+
+
+--
+reference key - pkey or unique
+
+
+CREATE TABLE DEPT (
+  DEPTNO NUMBER(2) CONSTRAINT PK_DEPT PRIMARY KEY,
+  DNAME  VARCHAR2(14),
+  LOC    VARCHAR2(13)
+);
+
+
+CREATE TABLE EMP (
+  EMPNO    NUMBER(4) CONSTRAINT PK_EMP PRIMARY KEY,
+  ENAME    VARCHAR2(10),
+  JOB      VARCHAR2(9),
+  MGR      NUMBER(4),
+  HIREDATE DATE,
+  SAL      NUMBER(7,2),
+  COMM     NUMBER(7,2),
+  DEPTNO   NUMBER(2) CONSTRAINT FK_DEPTNO REFERENCES DEPT
+);
+OR
+
+CREATE TABLE EMP (
+  EMPNO    NUMBER(4) CONSTRAINT PK_EMP PRIMARY KEY,
+  ENAME    VARCHAR2(10),
+  JOB      VARCHAR2(9),
+  MGR      NUMBER(4),
+  HIREDATE DATE,
+  SAL      NUMBER(7,2),
+  COMM     NUMBER(7,2),
+  DEPTNO   NUMBER(2),
+ CONSTRAINT FK_DEPTNO  FOREIGN KEY(DEPTNO)  REFERENCES DEPT    
+);
+
+ CONSTRAINT FK_DEPTNO  FOREIGN KEY(DEPTNO)  REFERENCES DEPT    
+
+ -- AUTOMCATICALY REFER THE DEPT TABLE PRIMARY KEY WHICH IS DEPTNO
+
+
+---
+dql
+
+SELECT
+
+select  * | column list from <tablename>  [where  <condition>]
+order by  <column name>  [asc |desc]
+
+* - all the columns
+column list - more than one column separated by comma
+
+select * from emp;
+
+PROJECTION
+select ename,empno,sal,deptno from emp
+
+COLUMN ALIAS - ONLY FOR DISPLAYING PURPOSE
+
+select ename "NAME OF THE EMPLOYEE",EMPNO EMPLOYEE_NUMBER,SAL SALARY FROM EMP;
+
+
+RESTRICTION
+  - ONLY SPECIFIED ROWS
+
+SELECT * FROM EMP WHERE  SAL>2000
+
+>
+<
+>=
+<=
+=
+!=
+
+AND
+OR
+NOT
+
+IS NULL
+IS NOT NULL
+IN
+NOT IN
+BETWEEN
+NOT BETWEEN
+LIKE
+NOT LIKE
+
+   WHERE   COLUMNNAME IS NULL
+
+COLUMNVNAME=NULL  - IT IS WRONG
+SELECT * FROM EMP WHERE COMM =NULL   -- INCORRECT
+
+
+-- CHECK AGAINST NULL VALUE
+SELECT * FROM EMP WHERE COMM IS NULL
+SELECT * FROM EMP WHERE COMM IS NULL
+
+
+SELECT * FROM EMP WHERE DEPTNO=10 OR DEPTNO=20;
+ -- IT DISPLAY EMPLOYEE DEPARTMENT 10 AS WELLAS DEPTNO 20
+
+COLUMNNAME IN(VALUE1,VALUE2...)
+SELECT * FROM EMP WHERE DEPTNO  IN(10,20);
+SELECT * FROM EMP WHERE ENAME IN ('ALLEN','JAMES','JONES')
+
+
+SELECT * FROM EMP WHERE DEPTNO NOT IN(10,20);
+
+
+
+SELECT * FROM EMP WHERE SAL>=1000 AND  SAL<=3000;
+
+SELECT * FROM EMP WHERE SAL BETWEEM 1000 AND 3000
+
+-- SAL <1000 ,  SAL>3000
+SELECT * FROM EMP WHERE SAL<1000 OR SAL>3000
+
+SELECT * FROM EMP WHERE SAL NOT BETWEEM 1000 AND 3000
+
+
+LIKE
+NOT LIKE
+
+_  - UNDERSCORE  - SINGLE CHARACTER
+%  - ZERO OR MORE CHARACTER
+
+ENAME='VIVEK'  --- EXACT MATCH
+
+  LIKE '%VIVEK%'
+
+VIVEK
+UPPARAI VIVEK RAJ
+ASHDFKASDF VIVEK
+VIVEK RAJ
+VIVEK REDDY
+
+
+----
+ORDER BY  - HELPS YOU TO DISPLAY THE ROWS IN THE SPECIFIC ORDER  (SORTING)
+
+SELECT * FROM EMP ORDER BY SAL;
+-- ASC
+
+SELECT * FROM EMP ORDER BY SAL DESC 
+
+SELECT * FROM EMP WHERE DEPTNO IN(10,20) ORDER BY SAL
+
+SELECT * FROM EMP WHERE DEPTNO IN(10,20) ORDER BY DEPTNO, SAL
+
+  -- INSIDE EACH DEPARTMENT, IT DISPLAY THE ROWS BASED ON SAL
+
+
+
+
+DDL - AUTOMATICALLY WHAT EVER THE CHANGES YOU MADE BEFORE THIS COMMAND WILL BE COMMIT AUTOMATICALLY
+
+
+
+CREATE
+
+INSERT
+UPDATE
+DELETE
+COMMIT
+
+
+CREATE
+
+INSERT
+UPDATE
+DELETE
+rOLLBACK  - INSERT,UPDATE,DELETE
+
+
+GROUP BY  HAVING
+SUBQUERY
+JOIN
+--
+JDBC
+
+
+Update
+
+update  <tablename>
+   set  column1 =value1, ....
+  [where <condition>]
+
+
+insert into product values(102,'WATER COLOR',200);
+insert into product values(103,'COLOR PAPER',150);
+insert into product values(104,'SKETCH PENCILS',250);
+insert into product values(105,'PEN SET',75);
+COMMIT;
+SELECT * FROM PRODUCT;
+
+UPDATE PRODUCT SET PRICE=80;  -- ALL THE ROWS PRICE WILL BE CHANGED TO 80
+SELECT * FROM PRODUCT;
+
+ROLLBACK;    -- UPTO PREVIOUS COMMIT  ALL THE CHANGES ARE ROLLBACKED
+SELECT * FROM PRODUCT;
+
+UPDATE PRODUCT SET PRICE =80  WHERE PRODUCT_ID=103;    -- ONE ROW UPDATED
+SELECT * FROM PRODUCT;
+
+UPDATE PRODUCT SET PRICE=PRICE+20 WHERE PRICE>100;  -- 2 ROWS UPDATED
+SELECT * FROM PRODUCT;
+
+UPDATE PRODUCT SET PRODUCT_NAME='WATER COLOR-BIG'
+ ,PRICE=210 WHERE PRODUCT_ID=102;  -- 1 ROWS UPDATED
+
+SELECT * FROM PRODUCT;
+
+SELECT * FROM PRODUCT;
+
+
+TO DELETE THE ROWS
+
+DELETE FROM <TABLENAME>  [WHERE <CONDITION>]
+ 
+DEKETE FROM PRODUCT WHERE PRICE>200;  --2 ROWS DELETED
+SELECT * FROM PRODUCT
+DELETE FROM PRODUCT;   -- IT WILL REMOVE ALL ROWS
+
+SELECT * FROM PRODUCT;
+ ALL THE ROWS ARE DELETED. ONLY WE HAVE A STRUCTURE  0 ROWS
+DESC PRODUCT;
+
+TO DELETE  TABLE - ROWS+STRUCTURE
+ DROP TABLE  <TBALENAME>
+
+----------
+Alter table <tablename>
+
+ - add column
+ - drop column
+ - rename column
+ -  add constraint
+  - drop constraint
+  - change datatype
+  - modify  column  datatype
+
+
+Alter table <tablename>
+   add column   columndefinition;
+
+
+
+ALTER TABLE table-Name
+{
+    ADD COLUMN column-definition |
+    ADD CONSTRAINT clause |
+    DROP [ COLUMN ] column-name [ CASCADE | RESTRICT ]
+    DROP { PRIMARY KEY | FOREIGN KEY constraint-name | UNIQUE 
+	 constraint-name | CHECK constraint-name | CONSTRAINT constraint-name }
+    ALTER [ COLUMN ] column-alteration |
+
+
+
+Alter table  product add column  category  varchar2(30);
+
+alter table  product drop column category;
+
+alter table product rename column  price to product_price;
+
+if the table is empty we can decrease the size
+alter table  product  modify  product_price  number(9,2);
+
+
+-----
+
+single row function- for each and every row
+ numeric function
+ character function
+ datetime function
+ conversion function
+ miscellaneous  function
+
+ for each row  it will return value
+
+
+group function - set of rows   -- it will return single value
+ or  aggregate function
+
+sum
+avg
+max
+min
+count
+
+
+// for the entire table  (default)- set of rows
+select sum(sal) from emp;
+
+select sum(sal) from emp where deptno=10
+
+select max(sal) from emp;
+
+select count(comm), count(*), count(sal) from emp;
+
+count(*) - it count including null values
+count(columnname) - it count only the not null values
+
+
+select ... from <tablename> [where <condition>]
+group by <columnname> [ having <condition>]
+
+[order by ]
+
+select columnname in the groupby , aggregate function from <tablename>
+group by <column>
+
+
+select deptno,sum(sal) from emp
+group by deptno;
+
+
+select deptno,sum(sal) from emp WHERE  SAL>1000
+group by deptno;
+
+select deptno,JOB,sum(sal) from emp
+group by deptno,JOB
+
+select deptno,JOB,sum(sal),COUNT(*) DEPT_JOB_COUNT  from emp
+group by deptno,JOB
+ORDER BY DEPT_JOB_COUNT
+
+select deptno,sum(sal) from emp
+group by deptno HAVING  COUNT(*) >3;
+
+select deptno,sum(sal),AVG(SAL) from emp
+group by deptno
+HAVING AVG(SAL)>2000;
+
+------------------------
+SUBQUERY
+
+qUERY DEPENDS ON ANOTHER QUERY RESULT
+
+DISPLAY THE EMPLOYEES WHOSE JOB IS SIMILAR  JONES
+
+1. FIND THE JONES JOB
+2. EXECUTE THE QUERY
+
+SELECT JOB FROM EMP WHERE ENAME='JONES';
+MANAGER
+
+SELECT * FROM EMP  WHERE  JOB='MANAGER';
+
+QUERY WITHIN QUERY
+SELECT ... FROM  ..  WHERE COLUMN RELATIONALOPERATOR(ANOTER QUERY -SUBQUERY)
+
+MAKE SURE SUBQUERY RETURNING A SINGLE VALUE
+
+
+SELECT * FROM EMP  WHERE  JOB=(SELECT JOB FROM EMP WHERE ENAME='JONES');
+
+
+JOIN
+
+CROSS JOIN OR CARTESIAN PRODUCT
+ - NO MEANINGFUL DATA
+
+EMP           DEPT
+A              1
+B              2
+C              3
+D
+E
+
+A-->1
+A--->2
+A-->3
+
+B-->1
+B-->2
+B-->3
+
+....
+
+EMP
+14 ROWS
+DEPT 
+4 ROWS
+
+14 x 4 = 56 ROWS
+
+SELECT * FROM EMP CROSS JOIN DEPT  WHERE EMP.DEPTNO=DEPT.DEPTNO;
+
+IF FILTER - ONLY PRODUCE 14 ROWS
+
+BOTH TABLES  WE HAVE DEPTNO - TO DIFFERENTIATE WE USE TABLENAME.COLUMNNAME
+
+INNER JOIN
+ -INLY MATCHING ROWS
+SELECT * FROM EMP  INNER JOIN DEPT ON  EMP.DEPTNO=DEPT.DEPTNO
+14 ROWS
+
+JOIN 2 TABLES - 1 CONDITION
+JOIN N TABLE   - N-1 CONDITION
+
+SELECT * FROM EMP e  INNER JOIN DEPT  D ON  E.DEPTNO=D.DEPTNO
+
+SELECT EMPNO,ENAME,SAL,E.DEPTNO,D.* FROM EMP e  INNER JOIN DEPT  D ON  E.DEPTNO=D.DEPTNO
+
+SELECT EMPNO,ENAME,SAL,E.DEPTNO,D.DEPTNO,DNAME FROM EMP e  INNER JOIN DEPT  D ON  E.DEPTNO=D.DEPTNO
+
+SELECT * FROM EMP E INNER JOIN DEPT D USING(DEPTNO)
+ IN BOTH TABLE WE MUSH HAVE DEPTNO AND ALSO IT IS JOINING BASED ON THE DEPTNO
+COMMON COLUMN (DEPTNO) IS DISPLAYED AS A FIRST COLUMN
+
+
+
+NATURAL JOIN operation
+Specifies an inner or outer join between two tables. It has no explicit join clause. Instead, one is created implicitly using the common columns from the two tables.
+
+In all cases, you can specify additional restrictions on one or both of the tables being joined in outer join clauses or in the WHERE clause.
+
+BASED ON THE COMMON COLUMN - IT JOIN THE TABLE
+
+DANGENROUS JOIN
+
+SELECT * FROM  EMP NATRUAL JOIN DEPT;
+
+ IT JOIN THE TABLES BASED ON THE COMMON COLUMN (DEPTNO)
+
+
+OUTER JOIN
+  preserving unmatched rows 
+
+LEFT OUTER JOIN operation
+Specifies a join between two tables with an explicit join clause, preserving unmatched rows from the first table.
+
+RIGHT OUTER JOIN operation
+Specifies a join between two tables with an explicit join clause, preserving unmatched rows from the second table.
+
+
+SELECT * FROM EMP E LEFT OUTER JOIN DEPT D WHERE E.EMPNO=D.DEPTNO;
+
+
+SELECT * FROM DEPT D LEFT OUTER JOIN EMP  E WHERE E.EMPNO=D.DEPTNO;
+
+
+SELECT * FROM EMP E RIGHT OUTER JOIN DEPT D WHERE E.EMPNO=D.DEPTNO;
+
+
+
+SELECT * FROM EMP E FULL OUTER JOIN DEPT D WHERE E.EMPNO=D.DEPTNO;
+     
+
+
+UNION
+INTERSECT
+UNION ALL
+
+SELECT * FROM EMP WHERE DEPTNO=10
+UNION
+SELECT * FROM EMP1 WHERE DEPTNO=20;
+
+SELECT * FROM EMP WHERE DEPTNO=10
+UNION
+SELECT * FROM EMP WHERE DEPTNO=20
+
+
+SELECT * FROM EMP WHERE DEPTNO IN(10,20)
+UNION ALL
+SELECT * FROM EMP1 WHERE DEPTNO=20
+
+
+SELECT * FROM EMP WHERE DEPTNO=10
+INTERSECT
+SELECT * FROM EMP1 WHERE DEPTNO=20
+
+SELECT EMPNO,ENAME,SAL FROM EMP WHERE DEPTNO=10
+UNION
+SELECT EMPNO,ENAME,SAL FROM EMP1 WHERE DEPTNO=20
+
+-- ERROR  -  NO OF COLUMN MISMATCH
+SELECT EMPNO,ENAME,SAL FROM EMP WHERE DEPTNO=10
+UNION
+SELECT ENAME,SAL FROM EMP1 WHERE DEPTNO=20
+
+-- ERROR  DATATYPE MISMATCH
+SELECT EMPNO,ENAME,SAL FROM EMP WHERE DEPTNO=10
+UNION
+SELECT ENAME,SAL,EMPNO FROM EMP1 WHERE DEPTNO=20
+
+
+- IT WORK- DATATYPE -MATCHING
+
+
+SELECT EMPNO,ENAME,SAL FROM EMP WHERE DEPTNO=10
+UNION
+SELECT SAL,ENAME,EMPNO FROM EMP1 WHERE DEPTNO=20
+
+
+SELECT EMPNO,ENAME,JOB FROM EMP WHERE DEPTNO=10
+UNION
+SELECT DEPTNO,DNAME,LOC FR DEPT ;
+
+
+SELECT EMPNO,ENAME,SAL FROM EMP 
+UNION
+SELECT EMp_NO,EMP_NAME,SAL FROM EMP1 ;
+
+SELECT EMPNO,ENAME,SAL FROM EMP 
+MINUS
+SELECT EM_NO,EMP_NAME,SAL FROM EMP1 ;
+
+
+------------------------
+
+jdbc
+
+ java------------>database
+
+JAVA DATA BASE CONNECTIVITY
+
+DRIVERS  - SOFTWARE - JAR FILE
+ THIN DRIVER OR TYPE 4 DRIVER
+
+EACH AND EVERY DATABASE IT HAS OWN DRIVER
+
+
+         oRACLE                        ORACLE DRIVER
+        MySQL                          MYSQL DRIVER
+       SYBASE                           
+
+
+JAVA
+
+JAVA.SQL
+ JDBC PACK
+   CLASSES AND INTERFACES
+
+ java -->jdbc (java.sql) ----------->driver------------------>database
+
+
+to load the driver
+  - maven
+
+
+
+    load and register the driver (optional)
+    establish the connection ( to the database)
+    create the statement or preparedstatement or callable statement
+    execute the statement  (execute the query))
+     statement returns the resultset (result of the query)
+   iterate over the resultset
+
+
+
+
+
+
+
+
+Statement - simple query
+PreparedStatement  - dynamic sql
+CallableStatement - calling functions and procedures
+                   
+                           (IN PL/SQL   we can create functions, procedures, packages , triggers)
+                     CallableStatement we can call user defined functions, procedure 
+
+
+
+
+Statement  - .. Query ---------------->   
+        server side
+             check the syntax of sql
+   parse, compile and executed
+
+same statement -- send  -multiple -times
+   every time parse,compile and execute
+
+
+Prepared Statement
+   psmt -------------------->server
+         only for the first time it parse and compile and excute
+          same stmt send it for next time
+               already same stmt is first time parsed and compiler
+                so we have precompiled  pstmt is available
+               directly execute it
+
+
+Statement`
+
+* SQL is sent to DB as a complete string every time
+* Values are concatenated into the query
+* Parsed and compiled each execution
+* Vulnerable to SQL Injection
+
+Example
+
+ 
+Statement st = conn.createStatement();
+
+String sql = "SELECT * FROM users WHERE username = '" 
+           + user + "' AND password = '" + pass + "'";
+
+ResultSet rs = st.executeQuery(sql);
+ 
+
+-Problem (SQL Injection)
+
+If user enters: ' OR '1'='1
+ 
+Query becomes: SELECT * FROM users WHERE username = '' OR '1'='1'
+ 
+This can bypass login.
+
+---
+
+ `PreparedStatement`
+
+* SQL is precompiled once
+* Uses placeholders (`?`)
+* Values are set separately
+* Prevents SQL Injection
+* Faster for repeated execution
+
+Example
+ 
+String sql = "SELECT * FROM users WHERE username = ? AND password = ?";
+
+PreparedStatement ps = conn.prepareStatement(sql);
+ps.setString(1, user);
+ps.setString(2, pass);
+
+ResultSet rs = ps.executeQuery();
+ 
+
+---
+ Why Secure?
+
+Values are treated as data, not SQL code.
+
+Even if user types: ' OR '1'='1
+
+It is handled safely as a string.
+
+---
+
+Internal Working Difference
+
+| Step               | Statement            | PreparedStatement |
+| ------------------ | -------------------- | ----------------- |
+| SQL parsing        | Every time           | Once              |
+| Compilation        | Every time           | Once              |
+| Parameter handling | String concat        | `?` placeholders  |
+| Security           | ❌ SQL injection risk | ✅ Safe            |
+| Performance        | Slower               | Faster (reusable) |
+
+---
+Performance Example
+
+Loop inserting 10,000 records:
+
+Using Statement (slow)
+
+ 
+for (...) {
+   Statement st = conn.createStatement();
+   st.executeUpdate("INSERT INTO emp VALUES ("+id+", '"+name+"')");
+}
+ 
+
+DB parses 10,000 times.
+
+---
+
+Using PreparedStatement (fast)
+
+ 
+PreparedStatement ps =
+  conn.prepareStatement("INSERT INTO emp VALUES (?, ?)");
+
+for (...) {
+   ps.setInt(1, id);
+   ps.setString(2, name);
+   ps.executeUpdate();
+}
+ 
+
+DB parses once, reuses plan.
+
+---
+Final Difference Table
+
+| Feature       | Statement                | PreparedStatement                |
+| ------------- | ------------------------ | -------------------------------- |
+| Query type    | Dynamic                  | Predefined                       |
+| Placeholders  | ❌                        | ✅ `?`                            |
+| SQL Injection | Possible                 | Prevented                        |
+| Compilation   | Every execution          | One time                         |
+| Speed         | Slower                   | Faster                           |
+| Best for      | Simple, one-time queries | Repeated queries with parameters |
+
+---
+
+ 
+
+> `Statement` executes dynamic SQL strings and is prone to SQL injection, while `PreparedStatement` uses precompiled SQL with parameters, making it faster and secure.
+
+
+
